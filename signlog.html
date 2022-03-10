@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SignUp and Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-5.css">
+    <link rel="stylesheet" href="style-2.css">
+    <!-- Jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- navigation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav style="margin-bottom: 50px;">
+        <div class="logo">
+            <img src="images/black-logo.png" id="nav-logos" class="img-fluid nav-logo" alt="">
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a class="active" href="#">Log In</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container hide-login" id="container">
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign In</h1>
+                <span>Or Use Your Account</span>
+                <input type="text" name="email" placeholder="Username" id="username">
+                <input type="text" name="password" required placeholder="Password" id="password">
+                <button onclick="Login()">Sign In</button>
+                <button style="display:none; margin-top: 10px;" onclick="ForgotPassword()" id="forgotpw">Forgot Password</button>
+            </form>
+        </div>
+
+        <div class="overlay-container ">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter Your Details And Start Journey With Us</p>
+                    <button class="ghost" id="signUp"><a class="sign-up" href="register.html"> Sign Up </a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Retrieval Form -->
+    <fieldset class="hide-login" style="display:none" id="pwret">
+        <legend>Password Retrieval</legend>
+
+        <!-- Some Hard coded questions that the developer put for the users for when they signup, 
+	you can edit questions to whatever you like-->
+        <label for="securty">Choose your security question that you picked while signing up:</label>
+        <select name="securty" id="securty">
+			<option value="Pet">What's the name of your pet?</option>
+			<option value="Car">Which is the first car you ever bought?</option>
+		</select>
+
+        <!-- Users will put their security answer in this textbox -->
+        <input type="text" id="secanswer">
+        <br>
+        <!-- A button that will check if the answer is right -->
+        <button onclick="CheckSec()">Check</button>
+
+        <!-- A new input textbox and button will appear upon entering the correct answer to change/overwrite the pw -->
+        <input type="text" id="changepassword" style="display:none;" placeholder="Enter your new password here">
+
+        <button onclick="ChangePassword()" style="display:none;" id="confirmpassword">Confirm Password</button>
+
+
+    </fieldset>
+
+    <script>
+        // Declaring a hard coded user
+        let user1 = "huzaifa";
+        let user1_pass = "abc";
+
+        function ForgotPassword() {
+            document.getElementById("pwret").style.display = "";
+        }
+
+        //Only security answer is declared because the questions will already be provided in the pw 
+        //retrieval form
+        let sec_answer = "catty";
+
+        logintries = 0;
+
+        function Login() {
+            // storing user1 and user1_pass to the local storage
+            localStorage.setItem('user', user1);
+            localStorage.setItem('password', user1_pass);
+
+            // Storing TEXT BOXES DATA IN variables
+            var user = document.getElementById("username").value;
+            var pw = document.getElementById("password").value;
+
+            // Basic user authentication check
+            if (user == user1 && pw == user1_pass) {
+                alert("Logged in!");
+            } else {
+                alert("Wrong credentials");
+
+                //Incrementing logintries variable
+                logintries += 1;
+            }
+
+            //If logintries variable is greater than 2 then the passworld retrieval fieldset 
+            //will be visible to the user
+            if (logintries > 2) {
+                document.getElementById("forgotpw").style.display = "";
+            }
+        }
+
+        function CheckSec() {
+            let sec = document.getElementById("secanswer").value;
+            if (sec == sec_answer) {
+                alert("Correct answer");
+                document.getElementById("changepassword").style.display = "";
+                document.getElementById("confirmpassword").style.display = "";
+            } else {
+                alert("Wrong Answer");
+            }
+        }
+
+        function ChangePassword() {
+            var newpassword = document.getElementById("changepassword").value;
+            user1_pass = newpassword;
+            localStorage.setItem('password', user1_pass);
+            alert("Your password has been changed");
+            document.getElementById("pwret").style.display = "none";
+        }
+
+        $(document).ready(function() {
+            $(".menu-btn").click(function() {
+                $(".hide-login").toggle()
+            })
+        })
+    </script>
+</body>
+
+</html>

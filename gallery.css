@@ -1,0 +1,258 @@
+/* gallery page */
+
+.breadcrumbs-custom {
+    position: relative;
+    padding: 315px 0 65px;
+    text-align: center;
+    background: linear-gradient( 193.03deg, #151515 -28.3%, rgba(21, 21, 21, 0.26) 112.54%);
+}
+
+div#gallery-img-container {
+    margin-top: 349px;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-header-top {
+    position: absolute;
+}
+
+.col-12.col-lg-9 {
+    position: absolute;
+    top: 104px;
+    text-align: center;
+}
+
+#gallery-img-container {
+    margin-bottom: 30px;
+}
+
+.li-gallery {
+    padding: 39px 13px;
+    list-style: none;
+}
+
+.home-anc {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.li-gallery.icon {
+    font-size: 32px;
+    padding: 28px 0px;
+}
+
+
+/* media */
+
+@media screen and (min-width:300px) and (max-width:900px) {
+    .col-12.col-lg-9 {
+        position: absolute;
+        top: 26px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 29px;
+    }
+    dl,
+    ol,
+    ul {
+        margin-top: -37px;
+        margin-bottom: 1rem;
+    }
+    div#gallery-img-container {
+        margin-top: 75px;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:1100px) {
+    div#gallery-img-container {
+        margin-top: 161px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+    div#gallery-img-container {
+        margin-top: 315px;
+    }
+}
+
+
+/* transition */
+
+.img-hover-zoom--colorize img {
+    transition: transform .5s, filter 1.5s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.img-hover-zoom--colorize:hover img {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+}
+
+
+/* navigation */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.show {
+    display: block;
+}
+
+nav {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background: #F29EA1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #111;
+    background: #fff;
+}
+
+nav .menu-btn i {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        padding: 0 40px 0 50px;
+    }
+}
+
+@media (max-width: 920px) {
+    nav .menu-btn i {
+        display: block;
+    }
+    #click:checked~.menu-btn i:before {
+        content: "\f00d";
+    }
+    nav ul {
+        position: fixed;
+        top: 113px !important;
+        left: -100%;
+        background: #111;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    #click:checked~ul {
+        left: 0;
+    }
+    nav ul li {
+        width: 100%;
+        margin: 40px 0;
+    }
+    nav ul li a {
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked~ul li a {
+        margin-left: 0px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: none;
+        color: cyan;
+    }
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: -1;
+    width: 100%;
+    padding: 0 30px;
+    color: #1b1b1b;
+}
+
+.content div {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.nav-logo {
+    width: 199px;
+}
+
+.sticky {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    transition: 2s ease-in;
+}

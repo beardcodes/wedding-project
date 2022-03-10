@@ -1,0 +1,46 @@
+.breadcrumbs-custom {
+    position: relative;
+    padding: 315px 0 65px;
+    text-align: center;
+    background: linear-gradient( 193.03deg, #151515 -28.3%, rgba(21, 21, 21, 0.26) 112.54%);
+}
+
+div#gallery-img-container {
+    margin-top: 349px;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-header-top {
+    position: absolute;
+}
+
+.col-12.col-lg-9 {
+    position: absolute;
+    top: 104px;
+    text-align: center;
+}
+
+#gallery-img-container {
+    margin-bottom: 30px;
+}
+
+.li-gallery {
+    padding: 39px 13px;
+    list-style: none;
+}
+
+.home-anc {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.li-gallery.icon {
+    font-size: 32px;
+    padding: 28px 0px;
+}

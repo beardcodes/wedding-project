@@ -1,0 +1,80 @@
+.rounded-lg {
+    border-radius: 1rem !important;
+}
+
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+.custom-separator {
+    width: 5rem;
+    height: 6px;
+    border-radius: 1rem;
+}
+
+.text-uppercase {
+    letter-spacing: 0.2em;
+}
+
+body {
+    color: #514B64;
+    min-height: 100vh;
+}
+
+#price-section {
+    background-color: #f7f7f7;
+}
+
+.port {
+    margin-bottom: 70px;
+}
+
+.form {
+    margin: 20px;
+    width: 87%;
+}
+
+.error {
+    color: red;
+    text-align: left;
+    padding: 10px 0px 2px 5px;
+    font-family: system-ui;
+}
+
+form.form {
+    position: relative;
+    margin-top: 0px;
+}
+
+#reg-sub {
+    text-decoration: none;
+    color: white;
+}
+
+.contact-heading {
+    position: relative;
+    top: -238px;
+    font-size: 64px;
+}
+
+@media screen and (min-width:300px) and (max-width:812px) {
+    form.form {
+        position: relative;
+        margin-top: 0px;
+    }
+    .contact-heading {
+        position: relative;
+        top: -81px;
+        font-size: 36px;
+    }
+    /* h1#contact-heading-2 {
+        position: relative;
+        top: 102px;
+        font-size: 50px;
+    } */
+    h1#gal-head-2 {
+        position: relative;
+        top: 55px;
+        font-size: 40px;
+    }
+}

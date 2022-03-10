@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-5.css">
+    <link rel="stylesheet" href="style-2.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="register.css">
+    <!-- bootstrap cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- navigation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script>
+        function alert() {
+            document.getElementsByTagName('h1').style.display = "";
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="display: none;">hello</h1>
+    <!-- navigation bar -->
+    <nav>
+        <div class="logo">
+            <img src="images/black-logo.png" id="nav-logos" class="img-fluid nav-logo" alt="">
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a class="active" href="register.html">Register</a></li>
+            <li><a href="signlog.html">Log In</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="header-img material-parallax parallax ">
+        <img src="images/page-img.jpg " class="img-fluid">
+    </div>
+    <div class="container">
+        <div class="row text-center hide justify-content-center">
+            <!-- <div class="col-12 col-lg-9"> -->
+            <h1 class="contact-heading">Register</h1>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <form class="form hide" onsubmit="return validation()">
+        <table class="table table-hover table-bordered text-center justify-content-center">
+            <tr>
+                <td><label>firstName :</label></td>
+                <td><input class="form-control" type="text" id="username" placeholder="huzaifa">
+                    <p id="username-error" class="error"></p>
+                </td>
+
+            </tr>
+            <tr>
+                <td><label>lastName :</label></td>
+                <td><input class="form-control" type="text" id="lastname" placeholder="ahmed">
+                    <p id="lastname-error" class="error"></p>
+                </td>
+
+            </tr>
+            <tr>
+                <td><label>Email :</label></td>
+                <td><input class="form-control" type="email" id="email1" placeholder="someone@gmail.com">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Password :</label></td>
+                <td><input class="form-control" type="password" id="password" placeholder="password">
+                    <p id="password-error" class="error"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" required name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                        <label class="form-check-label" for="inlineRadio3">Other</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Date OF Birth</label></td>
+                <td><input class="form-control" required type="date"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="button" onclick="storage()" type="submit" class="btn btn-success">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Footer -->
+    <div class="container-fluid hide">
+        <div id="footer-row-container" class="row footer-row text-white">
+            <div class="col-md-4">
+                <!-- Logo -->
+                <img src="images/pink-logo.png" id="footer-logo" class="img-fluid logo">
+                <p class="footer-para">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.139448255306!2d67.03085831500417!3d24.927318984022445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f90157042d3%3A0x93d609e8bec9a880!2sAptech%20Computer%20Education%20North%20Nazimabad%20Center!5e0!3m2!1sen!2s!4v1641643709776!5m2!1sen!2s"
+                        width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </p>
+                <hr class="footer-line">
+                <p class="footer-para">© 2022 Wedding Planner. Privacy Policy</p>
+            </div>
+            <div class="col-md-8">
+                <div class="email-cont">
+                    <!-- search input -->
+                    <h3 class="footer-subscribe mb-3">Subscribe & Stay Updated</h3>
+                    <form class="row g-3">
+                        <div class="col-auto">
+                            <label for="email" class="visually-hidden">Email</label>
+                            <input type="email" required class="form-control" id="email" placeholder="email@example.com">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary btn-subscribe mb-3">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row mt-5 mb-3">
+                    <div class="col-md-6">
+                        <h3 class="footer-head footer-contact mb-3 ">Contact</h3>
+                        <span class="icon-text" style="display: flex;">
+                        <i class="bi bi-geo-alt-fill location-icon"></i>
+                        <div class="location-footer footer-color">Aptech North Nazimabad Karachi</div>
+                    </span>
+                        <!-- number -->
+                        <span class="icon-text" style="display: flex;">
+                        <i class="bi bi-telephone-fill location-icon"></i>
+                        <div class="number-footer footer-color">000-000-000</div>
+                    </span>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="footer-head mb-3">Get Social</h3>
+                        <p class="footer-color">Follow us to stay connected and receive instant updates.</p>
+                        <!-- Social Media Icon -->
+                        <ul class="icon-cont">
+                            <li class="list-footer">
+                                <a href="https://www.facebook.com/" target="blank"> <i class="bi bi-facebook social-icons"></a></i>
+                            </li>
+                            <li class="list-footer">
+                                <a href="https://www.instagram.com/" target="blank"><i class="bi bi-instagram social-icons"></a></i>
+                            </li>
+                            <li class="list-footer">
+                                <a href="https://twitter.com/?lang=en" target="blank"><i class="bi bi-twitter social-icons"></a></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // web  local storage
+        function storage() {
+            let email = document.getElementById("email1").value;
+            let password = document.getElementById("password").value;
+            let dropdown = document.getElementById("inputGroupSelect01").value;
+            localStorage.setItem("emai", email);
+            localStorage.getItem("emai");
+            localStorage.setItem("pwd", password);
+            localStorage.getItem("pwd");
+            localStorage.setItem("drp", dropdown);
+            localStorage.getItem("drp");
+        }
+
+        // form validation
+        let username = document.getElementById("username");
+        let lastname = document.getElementById("lastname");
+        let password = document.getElementById("password");
+        returnValue = 1;
+
+        function validation() {
+
+            if (username.value == "") {
+                document.getElementById("username-error").innerHTML = "User Name Is Empty"
+                returnValue = 0;
+            } else if (username.value.length < 6) {
+                document.getElementById("username-error").innerHTML = "At least write a 6 letters"
+                returnValue = 0;
+            } else {
+                document.getElementById("username-error").innerHTML = ""
+            }
+
+            if (lastname.value == "") {
+                document.getElementById("lastname-error").innerHTML = "Last Name Is Empty";
+                returnValue = 0;
+
+            } else if (lastname.value.length <= 5) {
+                document.getElementById("lastname-error").innerHTML = "At Least Write a 5 Letters";
+                returnValue = 0;
+            } else {
+                document.getElementById("lastname-error").innerHTML = "";
+            }
+
+            if (password.value == "") {
+                document.getElementById("password-error").innerHTML = "Password Is Empty";
+                returnValue = 0;
+
+            } else if (password.value.length <= 7) {
+                document.getElementById("password-error").innerHTML = "At Least Write a 8 Letters";
+                returnValue = 0;
+            } else {
+                document.getElementById("password-error").innerHTML = "";
+            }
+
+
+            if (returnValue) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        // navigation
+        $(document).ready(function() {
+            $(".menu-btn").click(function() {
+                $(".hide").toggle()
+            })
+        })
+    </script>
+</body>
+
+</html>
